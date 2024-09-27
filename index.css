@@ -1,0 +1,98 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Container Grid */
+  .container {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "content";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 1200px;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  /* Header Styling */
+  .header {
+    grid-area: header;
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  /* Content Section */
+  .content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  /* Individual Sections */
+  .section-a, .section-b, .section-c, .section-d {
+    padding: 20px;
+    text-align: center;
+    background-color: lightgray;
+    border: 1px solid #ccc;
+  }
+  
+  /* Mobile View: Stack sections vertically */
+  .section-a, .section-b, .section-c, .section-d {
+    width: 100%;
+  }
+  
+  /* Tablet View: 2 columns */
+  @media (min-width: 768px) {
+    .content {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .section-a, .section-b, .section-c, .section-d {
+      padding: 20px;
+    }
+  }
+  
+  /* Desktop View: 4 columns */
+  @media (min-width: 1024px) {
+    .content {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: 
+        "section-a section-b section-c section-d";
+    }
+    
+    .section-a {
+      background-color: lightyellow;
+    }
+  
+    .section-b {
+      background-color: lightcoral;
+    }
+  
+    .section-c {
+      background-color: lightgreen;
+    }
+  
+    .section-d {
+      background-color: lightpink;
+    }
+  }
+  
